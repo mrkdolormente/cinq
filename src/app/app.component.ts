@@ -55,6 +55,8 @@ export class AppComponent {
   }
 
   scrollInto(el:HTMLElement) {
-    el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
+    const y = el.getBoundingClientRect().top + window.pageYOffset - 111;
+
+    window.scrollTo({top: y, behavior: 'smooth'});
   }
 }
