@@ -1,0 +1,30 @@
+.cinq {
+    &-container {
+        @apply relative;
+        @apply z-10;
+        @apply bg-white;
+        @apply flex;
+        @apply flex-col;
+        @apply items-center;
+        @apply justify-center;
+    }
+
+    &-header {
+        @apply text-3xl;
+        @apply text-gray-700;
+        @apply uppercase;
+        @apply pb-10;
+    }
+    
+    &-card {
+        @apply bg-white;
+        @apply rounded;
+        @apply shadow;
+        @apply p-4;
+    }
+    
+    &-scroll {
+        @apply bg-opacity-100;
+    }
+}
+
