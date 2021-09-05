@@ -1,15 +1,15 @@
 <div class="relative min-h-screen font-montserrat" (scroll)="onScroll($event)">
   <header class="uppercase bg-white text-gray-800 bg-opacity-0 flex justify-evenly items-center fixed top-0 left-0 py-6 w-full z-50 transition ease-in-out duration-300" #headerEl>
-    <a class="cursor-pointer">Our Services</a>
-    <a class="cursor-pointer">About Us</a>
-    <a class="cursor-pointer">
+    <a class="cursor-pointer" (click)="scrollInto(servicesEl)">Our Services</a>
+    <a class="cursor-pointer" (click)="scrollInto(aboutEl)">About Us</a>
+    <a class="cursor-pointer" (click)="scrollInto(introductionEl)">
       <img src="https://prod-cinq-assets.s3.ap-southeast-1.amazonaws.com/brand/logo.png" width="150"/>
     </a>
-    <a class="cursor-pointer">The Team</a>
-    <a class="cursor-pointer">Contact Us</a>
+    <a class="cursor-pointer" (click)="scrollInto(teamEl)">The Team</a>
+    <a class="cursor-pointer" (click)="scrollInto(contactEl)">Contact Us</a>
   </header>
 
-  <section class="relative z-10 bg-white min-h-screen sm:min-h-screen-80 bg-opacity-50 py-14 px-10 flex justify-center items-center">
+  <section class="relative z-10 bg-white min-h-screen sm:min-h-screen-80 bg-opacity-50 py-14 px-10 flex justify-center items-center" #introductionEl>
     <p class="max-w-3xl text-center text-gray-800 italic text-lg">"With all that we have, we’ve been truly blessed. Your presence and prayers are all that we request. But if you desire to give nonetheless, a monetary gift is one we suggest."</p>
   </section>
   
@@ -40,19 +40,19 @@
     </div>
   </section>
 
-  <section class="cinq-container min-h-screen sm:pt-72 py-10 px-10">
+  <section class="cinq-container min-h-screen sm:pt-72 py-10 px-10" #servicesEl>
     <h2 class="cinq-header">Our Services</h2>
     <p class="max-w-3xl text-center text-gray-800">Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor</p>
   </section>
 
-  <section class="cinq-container opacity-80 py-14 px-10 min-h-screen-50">
+  <section class="cinq-container opacity-80 py-14 px-10 min-h-screen-50" #aboutEl>
     <h2 class="cinq-header">About Us</h2>
     <p class="max-w-3xl text-center text-gray-800">
       <span class="font-semibold">CINQ Invitations & Services</span> Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor
     </p>
   </section>
 
-  <section class="cinq-container min-h-screen py-14 px-10">
+  <section class="cinq-container min-h-screen py-14 px-10" #teamEl>
     <h2 class="cinq-header">The Team</h2>
     <div class="flex flex-row flex-wrap justify-center text-gray-800">
       <div class="max-w-xs w-full p-4" *ngFor="let tm of team">
@@ -62,7 +62,7 @@
     </div>
   </section>
 
-  <section class="cinq-container opacity-80 py-14 px-10 min-h-screen-50">
+  <section class="cinq-container opacity-80 py-14 px-10 min-h-screen-50" #contactEl>
     <h2 class="cinq-header">Contact Us</h2>
   </section>
 

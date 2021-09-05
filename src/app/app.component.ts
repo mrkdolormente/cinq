@@ -8,6 +8,7 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 export class AppComponent {
   @ViewChild('headerEl') headerEl:ElementRef;
 
+
   team: Array<{
     id: number,
     name: string,
@@ -43,9 +44,17 @@ export class AppComponent {
 
   constructor() {}
 
+  onInit() {
+    
+  }
+
   @HostListener('window:scroll', ['$event']) onScroll($event:any) {
     const headerNatEl = (this.headerEl.nativeElement as HTMLElement);
 
     window.scrollY > 0 ? headerNatEl.classList.add('cinq-scroll') : headerNatEl.classList.remove('cinq-scroll') ;
+  }
+
+  scrollInto(el:HTMLElement) {
+    el.scrollIntoView({behavior: "smooth", block: "center", inline: "nearest"});
   }
 }
