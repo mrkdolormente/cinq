@@ -11,7 +11,8 @@ export class AppComponent {
   team: Array<{
     id: number,
     name: string,
-    image: string
+    image: string,
+    position?: string
   }> = [
     {
       id: 1,
