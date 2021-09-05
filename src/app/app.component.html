@@ -1,0 +1,65 @@
+<div class="relative min-h-screen font-montserrat" (scroll)="onScroll($event)">
+  <header class="uppercase bg-white text-gray-800 bg-opacity-0 flex justify-evenly items-center fixed top-0 left-0 py-6 w-full z-50 transition ease-in-out duration-300" #headerEl>
+    <a class="cursor-pointer">Services</a>
+    <a class="cursor-pointer">About</a>
+    <a class="cursor-pointer">
+      <img src="https://prod-cinq-assets.s3.ap-southeast-1.amazonaws.com/brand/logo.png" width="150"/>
+    </a>
+    <a class="cursor-pointer">Team</a>
+    <a class="cursor-pointer">Contact</a>
+  </header>
+
+  <section class="relative z-10 bg-white min-h-screen sm:min-h-screen-80 bg-opacity-50 py-14 px-10 flex justify-center items-center">
+    <p class="max-w-3xl text-center text-gray-800 italic text-lg">"Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor"</p>
+  </section>
+  
+  <section class="relative z-20 bg-white text-gray-700 sm:max-w-7xl w-full sm:mx-auto py-14 sm:py-0 px-10 sm:px-0">
+    <div class="sm:absolute -top-40 left-0 flex flex-col sm:flex-row items-center sm:justify-evenly w-full">
+      <div class="cinq-card w-80 h-96 flex flex-col justify-evenly items-center my-2 sm:my-0">
+        <h2 class="uppercase">Icon Here</h2>
+        <p>Weddings</p>
+      </div>
+      <div class="cinq-card w-80 h-96 flex flex-col justify-evenly items-center my-2 sm:my-0">
+        <h2 class="uppercase">Icon Here</h2>
+        <p>Birthdays</p>
+      </div>
+      <div class="cinq-card w-80 h-96 flex flex-col justify-evenly items-center my-2 sm:my-0">
+        <h2 class="uppercase">Icon Here</h2>
+        <p>Others</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cinq-container min-h-screen sm:pt-72 py-10 px-10">
+    <h2 class="cinq-header">Services</h2>
+    <p class="max-w-3xl text-center text-gray-800">Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor</p>
+  </section>
+
+  <section class="cinq-container opacity-80 py-14 px-10 min-h-screen-50">
+    <h2 class="cinq-header">About</h2>
+    <p class="max-w-3xl text-center text-gray-800">
+      <span class="font-semibold">CINQ Invitations & Services</span> Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor Lorem epsum dolor
+    </p>
+  </section>
+
+  <section class="cinq-container min-h-screen py-14 px-10">
+    <h2 class="cinq-header">Team</h2>
+    <div class="flex flex-row flex-wrap justify-center text-gray-800">
+      <div class="max-w-xs w-full p-4" *ngFor="let tm of team">
+        <img [src]="tm.image" lazy="loading" [alt]="tm.name" class="h-80 w-full object-cover border-2 border-gray-800" />
+        <p class="text-center pt-2">{{ tm.name }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cinq-container opacity-80 py-14 px-10 min-h-screen-50">
+    <h2 class="cinq-header">Contact Us</h2>
+  </section>
+
+  <footer class="cinq-container h-20 text-center p-8">
+    <p class="text-gray-800">Cinq Invitations & Souvenirs</p>
+    <p class="text-gray-600 text-sm">All Rights Reserved 2021</p>
+  </footer>
+
+  <img class="w-full align-middle fixed top-0 left-0 z-0 h-screen object-cover" src="https://prod-cinq-assets.s3.ap-southeast-1.amazonaws.com/uploads/introduction.jpg" lazy="loading" alt="Cinq Background"/>
+</div>
