@@ -1,12 +1,28 @@
 <div class="relative min-h-screen font-montserrat" (scroll)="onScroll($event)">
-  <header class="uppercase bg-white text-gray-800 bg-opacity-0 flex justify-evenly items-center fixed top-0 left-0 py-6 w-full z-50 transition ease-in-out duration-300" #headerEl>
-    <a class="cursor-pointer" (click)="scrollInto(servicesEl)">Our Services</a>
-    <a class="cursor-pointer" (click)="scrollInto(aboutEl)">About Us</a>
-    <a class="cursor-pointer" (click)="scrollInto(introductionEl)">
-      <img src="https://prod-cinq-assets.s3.ap-southeast-1.amazonaws.com/brand/logo.png" width="150"/>
-    </a>
-    <a class="cursor-pointer" (click)="scrollInto(teamEl)">The Team</a>
-    <a class="cursor-pointer" (click)="scrollInto(contactEl)">Contact Us</a>
+  <header class="uppercase bg-white text-gray-800 bg-opacity-0 fixed top-0 left-0 py-6 px-4 w-full z-50 transition ease-in-out duration-300" #headerEl>
+    <div class="w-full hidden sm:flex justify-evenly items-center">
+      <a class="cursor-pointer" (click)="scrollInto(servicesEl)">Our Services</a>
+      <a class="cursor-pointer" (click)="scrollInto(aboutEl)">About Us</a>
+      <a class="cursor-pointer" (click)="scrollInto(introductionEl)">
+        <img src="https://prod-cinq-assets.s3.ap-southeast-1.amazonaws.com/brand/logo.png" width="150"/>
+      </a>
+      <a class="cursor-pointer" (click)="scrollInto(teamEl)">The Team</a>
+      <a class="cursor-pointer" (click)="scrollInto(contactEl)">Contact Us</a>
+    </div>
+    <div class="w-full relative flex justify-center items-center sm:hidden">
+      <a class="cursor-pointer" (click)="scrollInto(introductionEl)">
+        <img src="https://prod-cinq-assets.s3.ap-southeast-1.amazonaws.com/brand/logo.png" width="150"/>
+      </a>
+      <a class="absolute right-0 top-1/2 transform -translate-y-1/2" (click)="toggleMenu(headerEl)">
+        <span class="material-icons-outlined text-4xl">{{ isMenuShown ? 'close' : 'widgets' }}</span>
+      </a>
+    </div>
+    <div class="flex-col items-center justify-between pt-4" [ngClass]="{'hidden h-0': !isMenuShown, 'flex h-48': isMenuShown }">
+      <a class="cursor-pointer" (click)="scrollInto(servicesEl)">Our Services</a>
+      <a class="cursor-pointer" (click)="scrollInto(aboutEl)">About Us</a>
+      <a class="cursor-pointer" (click)="scrollInto(teamEl)">The Team</a>
+      <a class="cursor-pointer" (click)="scrollInto(contactEl)">Contact Us</a>
+    </div>
   </header>
 
   <section class="relative z-10 bg-white min-h-screen sm:min-h-screen-80 bg-opacity-50 py-14 px-10 flex justify-center items-center" #introductionEl>

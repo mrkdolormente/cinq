@@ -8,7 +8,6 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 export class AppComponent {
   @ViewChild('headerEl') headerEl:ElementRef;
 
-
   team: Array<{
     id: number,
     name: string,
@@ -42,21 +41,27 @@ export class AppComponent {
     }
   ];
 
-  constructor() {}
+  isMenuShown: boolean;
 
-  onInit() {
-    
-  }
+  constructor() {}
 
   @HostListener('window:scroll', ['$event']) onScroll($event:any) {
     const headerNatEl = (this.headerEl.nativeElement as HTMLElement);
+    
+    this.isMenuShown = false;
 
-    window.scrollY > 0 ? headerNatEl.classList.add('cinq-scroll') : headerNatEl.classList.remove('cinq-scroll') ;
+    window.scrollY > 0 ? headerNatEl.classList.add('cinq-scroll') : headerNatEl.classList.remove('cinq-scroll');
   }
 
   scrollInto(el:HTMLElement) {
     const y = el.getBoundingClientRect().top + window.pageYOffset - 111;
 
     window.scrollTo({top: y, behavior: 'smooth'});
+  }
+
+  toggleMenu(el:HTMLElement) {
+    this.isMenuShown = !this.isMenuShown;
+
+    this.isMenuShown ? el.classList.add('cinq-scroll') : el.classList.remove('cinq-scroll');
   }
 }
