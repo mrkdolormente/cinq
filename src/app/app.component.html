@@ -17,7 +17,7 @@
         <span class="material-icons-outlined text-4xl">{{ isMenuShown ? 'close' : 'widgets' }}</span>
       </a>
     </div>
-    <div class="flex-col items-center justify-between pt-4" [ngClass]="{'hidden h-0': !isMenuShown, 'flex h-48': isMenuShown }">
+    <div class="flex-col items-center justify-between pt-4 sm:hidden" [ngClass]="{'hidden h-0': !isMenuShown, 'flex h-48': isMenuShown }">
       <a class="cursor-pointer" (click)="scrollInto(servicesEl)">Our Services</a>
       <a class="cursor-pointer" (click)="scrollInto(aboutEl)">About Us</a>
       <a class="cursor-pointer" (click)="scrollInto(teamEl)">The Team</a>
